@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<title> Smart Policing system </title>
+<link rel = "icon" href = '../public/img/logo1.png' 
+        type = "image/x-icon">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../public/css/styles.css">
+<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+</head>
+
+<body class="bg-black-1 font-pop">
+
+    <center>
+        <img src="../public/img/logo1.png" alt="Logo" class="w-32 mb-2 mt-2">
+
+        <a href="/index.ejs" class="text-dark-1 mb-4 text-3xl font-extrabold "> Smart Policing System</a>
+
+        <div class="w-80 h-72 border-2 border-black rounded-2xl mt-2 ">
+            <form action="/action_page.php " class="bg-light-1">
+                <h1 class="font-extrabold text-xl text-left mx-2 my-6 text-dark-1">Login to Court</h1>
+
+
+                    <i style="font-size:24px" class="fa">&#xf2c3;</i>
+                    <input class=" text-white capitalize border-b-2 bg-transparent outline outline-offset-2 outline-0"
+                        type="text" id="CNIC" name="CNIC" maxlength="13" placeholder="CNIC"><br><br>
+
+                <i style="font-size:24px" class="fa hover:">&#xf13e;</i>
+                <input class=" text-white mb-4 border-b-2 bg-transparent outline outline-offset-2 outline-0"
+                    type="password" id="pwd" name="pwd" minlength="8" placeholder="Password"><br><br>
+                    <button type="submit"
+                    class="text border-2 border-transparent rounded-2xl px-2 py-2 bg-blue-400 text-white hover:bg-blue-500 mt-6 ">Login Now</button>
+            </form>
+
+
+           
+        </div>
+    </center>
+</body>
+
+</html>

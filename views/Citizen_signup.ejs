@@ -1,0 +1,88 @@
+
+
+
+
+<!DOCTYPE html>
+<title> Smart Policing system </title>
+<link rel = "icon" href = '../public/img/logo1.png' 
+        type = "image/x-icon">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="../pubblic/css/styles.css" text="text/css"> -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../public/css/styles.css">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-black-1 font-pop">
+
+    <center>
+        <img src="../public/img/logo1.png" alt="Logo" class="w-32 mb-2 mt-2">
+        
+        <a href="/index.ejs" class="text-dark-1 mb-4 text-3xl font-extrabold "> Smart Policing System</a>
+
+        <div class="max-w-2xl max-h-fit border-2 bg-dark-1 border-black rounded-2xl mt-2 mb-6  ">
+            <form action="/citizen/register_c" method="post">
+                <h1 class="font-extrabold text-xl text-left mx-2 my-6 text-dark-1">Registration</h1>
+
+                <i style="font-size:24px" class="fa ml-8">&#xf2c0;</i>
+                <input class=" text-blue-900 capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent bordbl"
+                    type="text" id="fname" name="fname" placeholder="Full Name">
+
+                <i style="font-size:24px" class="fa ml-8">&#xf2b7;</i>
+                <input type="email" placeholder="Email" name="email"
+                    class="peer ... text-blue-900 capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent bordbl" />
+                <br><br>
+
+                <i style="font-size:24px" class="fa ml-8">&#xf2c3;</i>
+                <input class=" text-blue-900 capitalize border-b-2 bg-transparent bordbl outline outline-offset-2 outline-0"
+                    type="text" id="CNIC" name="idCard" maxlength="13" placeholder="CNIC">
+
+                <i style="font-size:24px" class="fa ml-8">&#xf2ba;</i>
+                <input class=" text-blue-900  capitalize  border-b-2 bg-transparent bordbl outline outline-offset-2 outline-0"
+                    type="text" id="Phn" name="phone" maxlength="11" placeholder="Phone Number"><br><br>
+
+                    <i style="font-size:24px" class="fa ml-8">&#xf041;</i>
+                <input class=" text-blue-900  capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent bordbl "
+                    type="text" id="city" name="city" placeholder="City">
+
+                    <i style="font-size:24px" class="fa ml-8">&#xf015;</i>
+                <input class=" text-blue-900 capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent bordbl "
+                    type="text" id="Adrs" name="address" placeholder="Address"> <br><br>
+
+
+                <i style="font-size:24px" class="fa ml-8">&#xf13e;</i>
+                <input class=" text-blue-900  border-b-2 bg-transparent bordbl outline outline-offset-2 outline-0"
+                    type="password" id="password" name="pass" minlength="8" placeholder="Create Password">
+
+                    <i style="font-size:24px" class="fa ml-8">&#xf023;</i>
+                <input class=" text-blue-900  border-b-2 bg-transparent bordbl outline outline-offset-2 outline-0"
+                    type="password" id="pwd" name="pwd" minlength="8" placeholder="Confirm Password">
+
+                <br><br>
+                <button type="submit"
+                class="text border-2 border-transparent rounded-2xl px-2 py-2 bg-blue-400 text-white hover:bg-blue-500 mt-6 ">Signup</button>
+            </form>
+            <!-- <a href="/citizen/citizen_login"
+                class="text border-2 border-transparent rounded-2xl px-2 py-2 bg-blue-400 text-white hover:bg-blue-500 mt-6 ">Signup
+                Now</a> -->
+            <div>
+                <p class="text text-light-1 font-extrabold mt-6 mb-2">Already Member?
+                    <a href="/citizen/citizen_login" class="text text-dark-1 font-extrabold hover:text-blue-900">Sign in now</a>
+                </p>
+
+            </div>
+        </div>
+    </center>
+</body>
+
+</html>
