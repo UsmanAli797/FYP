@@ -10,7 +10,8 @@ const { Gateway, Wallets } = require('fabric-network');
 const fs = require('fs');
 const path = require('path');
 
-async function main(fname,email,idCard,phone,city,address,pass) {
+
+async function main(datetim,citizenname,cause,accusedname,invsummary,witnesname,witnessummary) {
     try {
         // load the network configuration
         const ccpPath = path.resolve(__dirname, '..', '..','..', '..','test-network', 'organizations', 'peerOrganizations', 'org1.example.com', 'connection-org1.json');
@@ -21,29 +22,20 @@ async function main(fname,email,idCard,phone,city,address,pass) {
         const wallet = await Wallets.newFileSystemWallet(walletPath);
         console.log(`Wallet path: ${walletPath}`);
 
-        // Check to see if we've already enrolled the user.
-        const identity = await wallet.get(idCard);
-        if (!identity) {
-            console.log('An identity for the user '+idCard+' does not exist in the wallet');
-            console.log('Run the registerUser.js application before retrying');
-            return;
-        }
-
         // Create a new gateway for connecting to our peer node.
         const gateway = new Gateway();
-        await gateway.connect(ccp, { wallet, identity: idCard, discovery: { enabled: true, asLocalhost: true } });
+        await gateway.connect(ccp, { wallet, identity: '1350341057523', discovery: { enabled: true, asLocalhost: true } });
 
         // Get the network (channel) our contract is deployed to.
         const network = await gateway.getNetwork('mychannel');
 
         // Get the contract from the network.
         const contract = network.getContract('fabcar');
-        console.log('Name: '+fname,'Email: '+email,'IdCard: '+idCard,'Phone: '+phone,'City: '+city,'Address: '+address,'Pass: '+pass)
-
+ console.log(datetim,citizenname,cause,accusedname,invsummary,witnesname,witnessummary)
         // Submit the specified transaction.
 
-        await contract.submitTransaction('CreateUser',idCard,fname , email ,idCard,phone,city,address, pass);
-        console.log('Transaction has been submitted');
+        await contract.submitTransaction('CreateInvestigationReport',datetim,datetim,citizenname,cause,"",accusedname,invsummary,witnesname,witnessummary);
+        console.log('Investigation Report has been submitted');
 
         // Disconnect from the gateway.
         await gateway.disconnect();

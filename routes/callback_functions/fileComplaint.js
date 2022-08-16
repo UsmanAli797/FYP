@@ -10,7 +10,8 @@ const { Gateway, Wallets } = require('fabric-network');
 const fs = require('fs');
 const path = require('path');
 
-async function main(fname,email,idCard,phone,city,address,pass) {
+
+async function main(idCard,fname,email,phone,date,casee,desc) {
     try {
         // load the network configuration
         const ccpPath = path.resolve(__dirname, '..', '..','..', '..','test-network', 'organizations', 'peerOrganizations', 'org1.example.com', 'connection-org1.json');
@@ -38,11 +39,10 @@ async function main(fname,email,idCard,phone,city,address,pass) {
 
         // Get the contract from the network.
         const contract = network.getContract('fabcar');
-        console.log('Name: '+fname,'Email: '+email,'IdCard: '+idCard,'Phone: '+phone,'City: '+city,'Address: '+address,'Pass: '+pass)
-
+        console.log(fname,idCard,email,phone,date,casee,desc,date)
         // Submit the specified transaction.
 
-        await contract.submitTransaction('CreateUser',idCard,fname , email ,idCard,phone,city,address, pass);
+        await contract.submitTransaction('CreateComplaint',idCard+casee,idCard,fname,email,phone,date,casee,desc);
         console.log('Transaction has been submitted');
 
         // Disconnect from the gateway.

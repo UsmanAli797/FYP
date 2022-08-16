@@ -10,8 +10,7 @@ const { Gateway, Wallets } = require("fabric-network");
 const fs = require("fs");
 const path = require("path");
 const { Result } = require("postcss");
-
-async function main(idCard) {
+async function main(idCard, UniqueCode) {
     try {
         const ccpPath = path.resolve(
             __dirname,
@@ -31,7 +30,7 @@ async function main(idCard) {
         const walletPath = path.join(process.cwd(), "wallet");
         const wallet = await Wallets.newFileSystemWallet(walletPath);
         console.log(`Wallet path: ${walletPath}`);
-
+        console.log(idCard);
         // Check to see if we've already enrolled the user.
         const identity = await wallet.get(idCard);
         if (!identity) {
@@ -57,9 +56,9 @@ async function main(idCard) {
 
         // Get the contract from the network.
         const contract = network.getContract("fabcar");
-        console.log(idCard);
-
-        const result= await contract.submitTransaction("QueryUser", idCard);
+        console.log('hello')
+        const result = await contract.submitTransaction("QueryComplaint",UniqueCode);
+        console.log(result.toString);
         await gateway.disconnect();
 
         return result.toString();

@@ -57,9 +57,9 @@ async function main(idCard) {
 
         // Get the contract from the network.
         const contract = network.getContract("fabcar");
-        console.log(idCard);
+        // console.log(idCard);
 
-        const result= await contract.submitTransaction("QueryUser", idCard);
+        const result= await contract.submitTransaction("QueryAllEvidence");
         await gateway.disconnect();
 
         return result.toString();

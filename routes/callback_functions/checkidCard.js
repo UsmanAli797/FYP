@@ -25,7 +25,7 @@ async function main(idCard) {
         // Check to see if we've already enrolled the user.
         const identity = await wallet.get(idCard.toString());
         if (!identity) {
-            console.log('An identity for the user '+idCard+' does not exist in the wallet');
+            console.log('An identity for the ser '+idCard+' does not exist in the wallet');
             console.log('Run the registerUser.js application before retrying');
             return false;
         }

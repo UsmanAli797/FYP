@@ -11,7 +11,7 @@ const fs = require("fs");
 const path = require("path");
 const { Result } = require("postcss");
 
-async function main(idCard) {
+async function main() {
     try {
         const ccpPath = path.resolve(
             __dirname,
@@ -33,11 +33,11 @@ async function main(idCard) {
         console.log(`Wallet path: ${walletPath}`);
 
         // Check to see if we've already enrolled the user.
-        const identity = await wallet.get(idCard);
+        const identity = await wallet.get('1350341057523');
         if (!identity) {
             console.log(
                 "An identity for the user " +
-                    idCard +
+                    '1350341057523' +
                     " does not exist in the wallet"
             );
             console.log("Run the registerUser.js application before retrying");
@@ -48,7 +48,7 @@ async function main(idCard) {
         const gateway = new Gateway();
         await gateway.connect(ccp, {
             wallet,
-            identity: idCard,
+            identity: '1350341057523',
             discovery: { enabled: true, asLocalhost: true },
         });
 
@@ -57,9 +57,8 @@ async function main(idCard) {
 
         // Get the contract from the network.
         const contract = network.getContract("fabcar");
-        console.log(idCard);
 
-        const result= await contract.submitTransaction("QueryUser", idCard);
+        const result= await contract.submitTransaction("QueryAllJudgement");
         await gateway.disconnect();
 
         return result.toString();

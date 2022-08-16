@@ -11,7 +11,7 @@ const fs = require("fs");
 const path = require("path");
 const { Result } = require("postcss");
 
-async function main(idCard) {
+async function main(idCard, uniquecode) {
     try {
         const ccpPath = path.resolve(
             __dirname,
@@ -59,7 +59,7 @@ async function main(idCard) {
         const contract = network.getContract("fabcar");
         console.log(idCard);
 
-        const result= await contract.submitTransaction("QueryUser", idCard);
+        const result= await contract.submitTransaction("QueryInvestigation",uniquecode);
         await gateway.disconnect();
 
         return result.toString();
