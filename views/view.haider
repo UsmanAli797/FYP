@@ -1,0 +1,175 @@
+<section class="home-section">
+    <div class="home-content">
+        <i class='bx bx-menu '></i>
+        <span class="text ">Citizen Dashboard</span>      
+    </div>
+    <table class="ml-14 w-11/12 bg-blue-900 text-white border-separate mt-20 border-spacing-2 border-b-4 border-t-4  border-slate-500 ...">
+        <thead>
+          <tr>
+            <th class="border border-slate-600 px-12  ...">Index</th>
+            <th class="border border-slate-600 px-12  ...">Name</th>
+            <th class="border border-slate-600 px-12  ...">CNIC</th>
+            <th class="border border-slate-600 px-12  ...">ID</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td >Indiana</td>
+            <td >Indianapolis</td>
+            <td >Indiana</td>
+            <td class="hover:font-bold"><a href="#">Indianapolis</a></td>
+          </tr>
+          <tr>
+            <td>Ohio</td>
+            <td>Columbus</td>
+          </tr>
+          <tr>
+            <td>Michigan</td>
+            <td>Detroit</td>
+          </tr>
+        </tbody>
+      </table>
+ 
+
+</section>
+
+
+<!DOCTYPE html>
+<title> Smart Policing system </title>
+<link rel="icon" href='../public/img/logo1.png' type="image/x-icon">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="font-pop ">
+    <div class="sidebar close bg-blue-900">
+        <div class="logo-details">
+            <a href="Citizen_Dashboard.ejs">
+                <img src="../public/img/logo1.png" alt="Logo" class="w-14  my-6">
+            </a>
+            <span class="logo_name">Smart Policing</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="/citizen/citizen_complaint">
+                    <i class='bx bx-comment-detail'></i>
+                    <span class="link_name">File Complaint</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/citizen/citizen_complaint">File Complaint</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-line-chart'></i>
+                    <span class="link_name">Complaint Status</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Complaint Status</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="profile-details">
+                    <div class="profile-content">
+                    </div>
+
+                    <div class="profile_name ">Haider Ali</div>
+                    <a href="Citizen_login.ejs"> . <i class='bx bx-log-out'></i></a>
+
+                </div>
+            </li>
+            <li>
+                <a href="/citizen/Citizen_Upload">
+                    <i class='bx bx-search-alt-2'></i>
+                    <span class="link_name">Upload Evidence</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/citizen/Citizen_Upload">Upload Evidence</a></li>
+                </ul>
+            </li>
+            <li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-message-alt-detail'></i>
+                    <span class="link_name">View Report</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">View Report</a></li>
+                </ul>
+            </li>
+            <li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="home-content">
+            <i class='bx bx-menu '></i>
+            <span class="text ">Citizen Dashboard</span>      
+        </div>
+        <table class="ml-14 w-11/12 bg-blue-900 text-white border-separate mt-20 border-spacing-2 border-b-4 border-t-4  border-slate-500 ...">
+            <thead>
+              <tr>
+                <th class="border border-slate-600 px-12  ...">Index</th>
+                <th class="border border-slate-600 px-12  ...">Name</th>
+                <th class="border border-slate-600 px-12  ...">CNIC</th>
+                <th class="border border-slate-600 px-12  ...">ID</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td >Indiana</td>
+                <td >Indianapolis</td>
+                <td >Indiana</td>
+                <td class="hover:font-bold"><a href="#">Indianapolis</a></td>
+              </tr>
+              <tr>
+                <td>Ohio</td>
+                <td>Columbus</td>
+              </tr>
+              <tr>
+                <td>Michigan</td>
+                <td>Detroit</td>
+              </tr>
+            </tbody>
+          </table>
+     
+    
+    </section>
+
+    <script>
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e) => {
+                let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        });
+
+    </script>
+
+   
+
+
+</body>
+
+</html>

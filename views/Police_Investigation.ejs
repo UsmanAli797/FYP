@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<title> Smart Policing system </title>
+<link rel="icon" href='../public/img/logo1.png' type="image/x-icon">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="font-pop ">
+    <div class="sidebar close bg-blue-900">
+        <div class="logo-details">
+            <a href="/police">
+                <img src="../public/img/logo1.png" alt="Logo" class="w-14  my-6">
+            </a>
+            <span class="logo_name">Smart Policing</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="/police">
+                    <i class='fa fa-eye'></i>
+                    <span class="link_name">View Complaints</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/police">View complaints</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/police/police_fir">
+                    <i class='bx bx-detail'></i>
+                    <span class="link_name">FIR Report</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/police/police_fir">FIR Report</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="/police/police_upload">
+                    <i class='fa fa-upload'></i>
+                    <span class="link_name">Upload Evidence</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/police/police_upload">Upload Evidence</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/police/police_investigation">
+                    <i class='bx bx-book-add'></i>
+                    <span class="link_name">Investigation Report</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/police/police_investigation">Investigation Report</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/police/police_viewforensic">
+                    <i class='fa fa-eye'></i>
+                    <span class="link_name">Forensic Reports</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/police/police_viewforensic">Forensic Reports</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/police/police_viewcourt">
+                    <i class='fa fa-eye'></i>
+                    <span class="link_name">Court Reports</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/police/police_viewcourt">Court Reports</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="profile-details">
+                    <div class="profile-content">
+                    </div>
+
+                    <div class="profile_name ">Police</div>
+                    <a href="/police/logout"> . <i class='bx bx-log-out'></i></a>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="home-content">
+            <i class='bx bx-menu'></i>
+            <span class="text">File Investigation Report</span>
+        </div>
+        <center>
+
+            <div class="max-w-2xl max-h-fit border-2 border-black rounded-2xl mt-10 mb-6 bg-white ">
+                <form action="/police/inv_c" method="post">
+                    <h1 class="font-extrabold text-xl text-center mx-2 my-6 text-black-1">Investigation Report</h1>
+
+                    <i style="font-size:24px" class="fa ml-8">&#xf2c0;</i>
+                    <input
+                        class=" text-black-1 border-black capitalize border-b-2 bg-transparent outline outline-offset-2 outline-0"
+                        type="text" required id="citizenname" name="citizenname" placeholder="Citizen Name">
+
+                    <i style="font-size:24px" class="fa ml-8">&#xf2c0;</i>
+                    <input
+                        class=" text-black-1 border-black capitalize  border-b-2 bg-transparent outline outline-offset-2 outline-0"
+                        type="text" id="witnesname" required name="witnesname" placeholder="Name of Witness"><br><br>
+
+
+
+                    <br> <br>
+
+                    <i style="font-size:24px" class="fa fa-book"></i>
+
+                    <input type="text" required placeholder="Cause" name="cause"
+                        class="peer ... text-black-1 border-black capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent" />
+                    <i style="font-size:24px" class="fa ml-8">&#xf2c0;</i>
+
+                    <input type="text"  required placeholder="Accused Name" name="accusedname"
+                        class="peer ... text-black-1 border-black capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent" />
+                    <br><br>
+                    <div>
+                        <textarea class="rounded-xl text-black font-extrabold indent-px outline outline-offset-2 outline-0
+                         border-2 border-black normal-case " id="invsummary" name="invsummary" rows="4" cols="50"
+                            placeholder=" Investigation Summary"></textarea>
+                        <br> <br>
+
+
+                    </div>
+                    <i style="font-size:24px" class="fa fa-calendar-alt"></i>
+                    <input
+                        class=" text-black-1 border-black capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent"
+                        type="time" required id="time" name="datetim" placeholder="Time">
+                    <br><br>
+                    <div>
+                        <textarea class="rounded-xl text-black font-extrabold indent-px outline outline-offset-2 outline-0
+                                 border-2 border-black normal-case " id="witnessummary" name="witnessummary" rows="4"
+                            cols="50" placeholder=" Witness Summary"></textarea>
+                        <br> <br>
+
+
+                    </div>
+
+
+
+
+
+
+                    <br><br>
+                    <button class="text mb-4 border-2 border-transparent rounded-2xl px-2 py-2 
+        bg-blue-400 text-black-1 hover:bg-blue-500 font-extrabold mt-6 " id="complaint">Submit</button><br><br>
+
+                </form>
+
+
+
+            </div>
+
+        </center>
+    </section>
+    <script>
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e) => {
+                let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        });
+
+    </script>
+
+</body>
+
+</html>

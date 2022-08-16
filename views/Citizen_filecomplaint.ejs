@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <title> Smart Policing system </title>
 <link rel = "icon" href = '../public/img/logo1.png' 
@@ -22,7 +23,7 @@
 <body class="font-pop ">
     <div class="sidebar close bg-blue-900">
         <div class="logo-details">
-            <a href="Citizen_Dashboard.ejs">
+            <a href="/citizen/citizen_dashboard">
                 <img src="../public/img/logo1.png" alt="Logo" class="w-14  my-6">
             </a>
             <span class="logo_name">Smart Policing</span>
@@ -38,44 +39,45 @@
                 </ul>
             </li>
             <li>
-                <a href="#">
-                    <i class='bx bx-line-chart'></i>
-                    <span class="link_name">Complaint Status</span>
+                <a href="/citizen">
+                    <i class='fa fa-eye'></i>
+                    <span class="link_name">View Complaint</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Complaint Status</a></li>
+                    <li><a class="link_name" href="/citizen">View Complaint</a></li>
+                    
                 </ul>
             </li>
             <li>
+                <li>
+                    <a href="/citizen/Citizen_Upload">
+                        <i class='fa fa-upload'></i>
+                        <span class="link_name">Upload Evidence</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="/citizen/Citizen_Upload">Upload Evidence</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <li>
+                        <a href="/citizen/citizen_viewcourt">
+                            <i class='fa fa-eye'></i>
+                            <span class="link_name">View Report</span>
+                        </a>
+                        <ul class="sub-menu blank">
+                            <li><a class="link_name" href="/citizen/citizen_viewcourt">View Report</a></li>
+                        </ul>
+                    </li>
+                    <li>
                 <div class="profile-details">
                     <div class="profile-content">
                     </div>
 
-                    <div class="profile_name ">Haider Ali</div>
-                    <a href="Citizen_login.ejs"> . <i class='bx bx-log-out'></i></a>
+                    <div class="profile_name "><%=USERNAME%></div>
+                    <a href="/citizen/logout"> . <i class='bx bx-log-out' ></i></a>
 
                 </div>
             </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-search-alt-2'></i>
-                    <span class="link_name">Upload Evidence</span>
-                </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Upload Evidence</a></li>
-                </ul>
-            </li>
-            <li>
-                <li>
-                    <a href="#">
-                        <i class='bx bx-message-alt-detail'></i>
-                        <span class="link_name">View Report</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                        <li><a class="link_name" href="#">View Report</a></li>
-                    </ul>
-                </li>
-                <li>
         </ul>
     </div>
     <section class="home-section">
@@ -86,61 +88,51 @@
         <center>
 
             <div class="max-w-2xl max-h-fit border-2 border-black rounded-2xl mt-10 mb-6 bg-white ">
-                <form action="/action_page.php">
-                    <h1 class="font-extrabold text-xl text-left mx-2 my-6 text-black-1">Complaint</h1>
+                <form action="/citizen/complaint_c" method="post">
+                    <h1 class="font-extrabold text-xl text-center mx-2 my-6 text-black-1">Complaint</h1>
 
                     <i style="font-size:24px" class="fa ml-8">&#xf2c0;</i>
-                    <input class=" text-black-1 border-black capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent"
-                        type="text" id="fname" name="fname" placeholder="Full Name">
-
-                    <i style="font-size:24px" class="fa ml-8">&#xf2b7;</i>
-                    <input type="email" placeholder="Email" name="email"
-                        class="peer ... text-black-1 border-black capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent" />
-                    <br><br>
-
+                    <input
+                        class=" text-black-1 border-black capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent"
+                        type="text" required id="fname" name="fname" placeholder="Full Name">
                     <i style="font-size:24px" class="fa ml-8">&#xf2c3;</i>
-                    <input class=" text-black-1 border-black capitalize border-b-2 bg-transparent outline outline-offset-2 outline-0"
-                        type="text" id="CNIC" name="idCard" maxlength="13" placeholder="CNIC">
+                    <input
+                        class=" text-black-1 border-black capitalize border-b-2 bg-transparent outline outline-offset-2 outline-0"
+                        type="text"required id="CNIC" name="idCard" maxlength="13" placeholder="CNIC">
+                        <br><br>
+                    <i style="font-size:24px" class="fa ml-8">&#xf2b7;</i>
+                    
+                    <input type="email" required placeholder="Email" name="email"
+                        class="peer ... text-black-1 border-black capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent" />
+                    
 
                     <i style="font-size:24px" class="fa ml-8">&#xf2ba;</i>
-                    <input class=" text-black-1 border-black capitalize  border-b-2 bg-transparent outline outline-offset-2 outline-0"
-                        type="text" id="Phn" name="phone" maxlength="11" placeholder="Phone Number"><br><br>
+                    <input
+                        class=" text-black-1 border-black capitalize  border-b-2 bg-transparent outline outline-offset-2 outline-0"
+                        type="text" id="Phn" required name="phone" maxlength="11" placeholder="Phone Number"><br><br><br>
 
-                    <i style="font-size:24px" class="fa ml-8">&#xf041;</i>
-                    <input class=" text-black-1 border-black capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent "
-                        type="text" id="city" name="city" placeholder="City">
+                    <i style="font-size:24px" class="fas fa-calendar-alt"></i>
+                    <input
+                        class=" text-black-1 border-black capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent "
+                        type="date" id="date" required name="date" placeholder="Date">
 
-                    <i style="font-size:24px" class="fa ml-8">&#xf015;</i>
-                    <input class=" text-black-1 border-black capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent "
-                        type="text" id="Adrs" name="address" placeholder="Address"> <br><br>
+                    
 
-
-                    <p class="font-bold text-left ml-16">Gender: </p>
-
-                    <div class="font-bold text-left ml-32">
-                        <input type="radio" id="Male" name="Gender" value="Male">
-                        <label for="Male">Male</label><br>
-                        <input type="radio" id="Female" name="Gender" value="Female">
-                        <label for="Female">Female</label><br>
-                        <input type="radio" id="Prefer not to say" name="Gender" value="Prefer not to say">
-                        <label for="Prefer not to say">Prefer not to say</label>
-                    </div><br>
-
-                    <p class="font-bold text-left ml-16">Crime: </p>
+                    <p class="font-bold text-left ml-16">Case: </p>
 
                     <div class="font-bold text-left ml-32">
-                        <input type="radio" id="Murder" name="Crime" value="Murder">
+                        <input type="radio" id="Murder" name="casee" value="Murder">
                         <label for="Murder">Murder</label><br>
 
-                        <input type="radio" id="Robbery" name="Crime" value="Robbery">
+                        <input type="radio" id="Robbery" name="casee" value="Robbery">
                         <label for="Robbery">Robbery</label><br>
 
-                        <input type="radio" id="Kidnapping" name="Crime" value="Kidnapping">
+                        <input type="radio" id="Kidnapping" name="casee" value="Kidnapping">
                         <label for="Kidnapping">Kidnapping</label><br>
 
-                        <input type="radio" id=" Harassment" name="Crime" value=" Harassment">
+                        <input type="radio" id=" Harassment" name="casee" value=" Harassment">
                         <label for=" Harassment"> Harassment</label>
-                   
+
 
 
                     </div><br><br>
@@ -148,26 +140,25 @@
 
                     <div>
                         <textarea class="rounded-xl text-black font-extrabold indent-px outline outline-offset-2 outline-0
-                             border-2 border-black normal-case " id="Complaint" name="Complaint"
-                            rows="4" cols="50" placeholder=" Complaint"></textarea>
+                             border-2 border-black normal-case " id="Complaint" name="desc" rows="4" cols="50"
+                            placeholder=" Complaint"></textarea>
 
                     </div>
 
                     <br><br>
                     <button class="text mb-4 border-2 border-transparent rounded-2xl px-2 py-2 
-        bg-blue-400 text-black-1 hover:bg-blue-500 font-extrabold mt-6 "
-         id="complaint">Submit</button><br><br>
+        bg-blue-400 text-black-1 hover:bg-blue-500 font-extrabold mt-6 " id="complaint">Submit</button><br><br>
 
                 </form>
 
-        
-           
-    </div>
+
+
+            </div>
 
         </center>
 
     </section>
-    
+
     <script>
         let arrow = document.querySelectorAll(".arrow");
         for (var i = 0; i < arrow.length; i++) {
@@ -182,297 +173,10 @@
         sidebarBtn.addEventListener("click", () => {
             sidebar.classList.toggle("close");
         });
-       
+
     </script>
 
-    <!-- CSS -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 260px;
-
-            z-index: 100;
-            transition: all 0.5s ease;
-        }
-
-        .sidebar.close {
-            width: 78px;
-        }
-
-        .sidebar .logo-details {
-            height: 60px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-        }
-
-        .sidebar .logo-details i {
-            font-size: 30px;
-            color: #fff;
-            height: 50px;
-            min-width: 78px;
-            text-align: center;
-            line-height: 50px;
-        }
-
-        .sidebar .logo-details .logo_name {
-            font-size: 22px;
-            color: #fff;
-            font-weight: 600;
-            transition: 0.3s ease;
-            transition-delay: 0.1s;
-        }
-
-        .sidebar.close .logo-details .logo_name {
-            transition-delay: 0s;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .sidebar .nav-links {
-            height: 100%;
-            padding: 30px 0 150px 0;
-            overflow: auto;
-        }
-
-        .sidebar.close .nav-links {
-            overflow: visible;
-        }
-
-        .sidebar .nav-links::-webkit-scrollbar {
-            display: none;
-        }
-
-        .sidebar .nav-links li {
-            position: relative;
-            list-style: none;
-            transition: all 0.4s ease;
-        }
-
-        .sidebar .nav-links li:hover {
-            background: #007bff;
-        }
-
-        .sidebar .nav-links li .iocn-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .sidebar.close .nav-links li .iocn-link {
-            display: block
-        }
-
-        .sidebar .nav-links li i {
-            height: 50px;
-            min-width: 78px;
-            text-align: center;
-            line-height: 50px;
-            color: #fff;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .sidebar .nav-links li.showMenu i.arrow {
-            transform: rotate(-180deg);
-        }
-
-        .sidebar.close .nav-links i.arrow {
-            display: none;
-        }
-
-        .sidebar .nav-links li a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .sidebar .nav-links li a .link_name {
-            font-size: 18px;
-            font-weight: 400;
-            color: #fff;
-            transition: all 0.4s ease;
-        }
-
-        .sidebar.close .nav-links li a .link_name {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .sidebar .nav-links li .sub-menu {
-            padding: 6px 6px 14px 80px;
-            margin-top: -10px;
-            background: #007bff;
-            display: none;
-        }
-
-        .sidebar .nav-links li.showMenu .sub-menu {
-            display: block;
-        }
-
-        .sidebar .nav-links li .sub-menu a {
-            color: #fff;
-            font-size: 15px;
-            padding: 5px 0;
-            blatext-black-1-space: nowrap;
-            opacity: 0.6;
-            transition: all 0.3s ease;
-        }
-
-        .sidebar .nav-links li .sub-menu a:hover {
-            opacity: 1;
-        }
-
-        .sidebar.close .nav-links li .sub-menu {
-            position: absolute;
-            left: 100%;
-            top: -10px;
-            margin-top: 0;
-            padding: 10px 20px;
-            border-radius: 0 6px 6px 0;
-            opacity: 0;
-            display: block;
-            pointer-events: none;
-            transition: 0s;
-        }
-
-        .sidebar.close .nav-links li:hover .sub-menu {
-            top: 0;
-            opacity: 1;
-            pointer-events: auto;
-            transition: all 0.4s ease;
-        }
-
-        .sidebar .nav-links li .sub-menu .link_name {
-            display: none;
-        }
-
-        .sidebar.close .nav-links li .sub-menu .link_name {
-            font-size: 18px;
-            opacity: 1;
-            display: block;
-        }
-
-        .sidebar .nav-links li .sub-menu.blank {
-            opacity: 1;
-            pointer-events: auto;
-            padding: 3px 20px 6px 16px;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .sidebar .nav-links li:hover .sub-menu.blank {
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .sidebar .profile-details {
-            position: fixed;
-            bottom: 0;
-            width: 260px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 0;
-            transition: all 0.5s ease;
-        }
-
-        .sidebar.close .profile-details {
-            background: none;
-        }
-
-        .sidebar.close .profile-details {
-            width: 78px;
-        }
-
-        .sidebar .profile-details .profile-content {
-            display: flex;
-            align-items: center;
-        }
-
-        .sidebar .profile-details img {
-            height: 52px;
-            width: 52px;
-            border-radius: 16px;
-            margin: 0 14px 0 12px;
-            transition: all 0.5s ease;
-        }
-
-        .sidebar.close .profile-details img {
-            padding: 10px;
-        }
-
-        .sidebar .profile-details .profile_name,
-        .sidebar .profile-details .job {
-            color: #fff;
-            font-size: 18px;
-            font-weight: 500;
-            blatext-black-1-space: nowrap;
-        }
-
-        .sidebar.close .profile-details i,
-        .sidebar.close .profile-details .profile_name,
-        .sidebar.close .profile-details .job {
-            display: none;
-        }
-
-        .sidebar .profile-details .job {
-            font-size: 12px;
-        }
-
-        .home-section {
-            position: relative;
-            background: #003153;
-            height: 150vh;
-            left: 260px;
-            width: calc(100% - 260px);
-            transition: all 0.5s ease;
-        }
-
-        .sidebar.close~.home-section {
-            left: 78px;
-            width: calc(100% - 78px);
-        }
-
-        .home-section .home-content {
-            height: 50px;
-            display: flex;
-            align-items: center;
-        }
-
-        .home-section .home-content .bx-menu,
-        .home-section .home-content .text {
-            color: #ffffff;
-            font-size: 35px;
-        }
-
-        .home-section .home-content .bx-menu {
-            margin: 0 15px;
-            cursor: pointer;
-        }
-
-        .home-section .home-content .text {
-            font-size: 26px;
-            font-weight: 600;
-        }
-
-        @media (max-width: 420px) {
-            .sidebar.close .nav-links li .sub-menu {
-                display: none;
-            }
-        }
-    </style>
+   
 
 
 </body>

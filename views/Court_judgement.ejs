@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<title> Smart Policing system </title>
+<link rel = "icon" href = '../public/img/logo1.png' 
+        type = "image/x-icon">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="font-pop ">
+    <div class="sidebar close bg-blue-900">
+        <div class="logo-details">
+            <a href="/court">
+                <img src="../public/img/logo1.png" alt="Logo" class="w-14  my-6">
+            </a>
+            <span class="logo_name">Smart Policing</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="/court">
+                    <i class='bx bx-comment-detail hover:font-bold'></i>
+                    <span class="link_name">Recieved FIR</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/court">Recieved Case</a></li>
+                </ul>
+            </li>
+          
+                    <li>
+                        <a href="/court/court_viewinvestigation">
+                            <i class='bx bx-message-rounded-error hover:font-bold'></i>
+                            <span class="link_name">Investigation Reports</span>
+                        </a>
+                        <ul class="sub-menu blank">
+                            <li><a class="link_name" href="/court/court_viewinvestigation">Investigation Reports</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/court/court_chargesheet">
+                            <i class='bx bx-message-rounded-add hover:font-bold '></i>
+                            <span class="link_name">Create Charge-Sheet</span>
+                        </a>
+                        <ul class="sub-menu blank">
+                            <li><a class="link_name" href="/court/court_chargesheet">Charge-Sheet</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/court/court_judgementreport">
+                            <i class='bx bx-message-alt-add hover:font-bold'></i>
+                            <span class="link_name">Create Judgement Report</span>
+                        </a>
+                        <ul class="sub-menu blank">
+                            <li><a class="link_name" href="/court/court_judgementreport">Create Judgement Report</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                <div class="profile-details">
+                    <div class="profile-content">
+                    </div>
+
+                    <div class="profile_name ">Court</div>
+                    <a href="/court/logout"> . <i class='bx bx-log-out'></i></a>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="home-content">
+            <i class='bx bx-menu '></i>
+            <span class="text ">Judgement Report</span>
+        </div>
+
+        <center>
+
+            <div class="max-w-2xl max-h-fit border-2 border-black rounded-2xl mt-10 mb-6 bg-white ">
+                <form action="/court/judgement_c" method="post">
+                    <h1 class="font-extrabold text-xl text-center mx-2 my-6 text-black-1">Judgement Report</h1>
+
+                    <i style="font-size:24px" class="fa ml-8">&#xf2c0;</i>
+                    <input
+                        class=" text-black-1 border-black capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent"
+                        type="text" required id="namee" name="namee" placeholder="Full Name">
+                        <br><br><br>
+                    <i style="font-size:24px" class="fa ml-8">&#xf2c3;</i>
+                    <input
+                        class=" text-black-1 border-black capitalize border-b-2 bg-transparent outline outline-offset-2 outline-0"
+                        type="text" required id="dateTime" name="dateTime" placeholder="Date and Time"><br><br><br>
+                    <i style="font-size:24px" class="fa fa-reorder"></i>
+
+                    <input type="text" required placeholder="Section of Law" name="sectionoflaws"
+                        class="peer ... text-black-1 border-black capitalize outline outline-offset-2 outline-0 border-b-2 bg-transparent" />
+                    <br><br>
+
+
+
+                    <!-- <p class="font-bold text-left ml-16">Case: </p> -->
+
+                    <!-- <div class="font-bold text-left ml-32">
+                        <input type="radio" id="Murder" name="casee" value="Murder">
+                        <label for="Murder">Murder</label><br>
+
+                        <input type="radio" id="Robbery" name="casee" value="Robbery">
+                        <label for="Robbery">Robbery</label><br>
+
+                        <input type="radio" id="Kidnapping" name="casee" value="Kidnapping">
+                        <label for="Kidnapping">Kidnapping</label><br>
+
+                        <input type="radio" id=" Harassment" name="casee" value=" Harassment">
+                        <label for=" Harassment"> Harassment</label>
+                    </div><br><br> -->
+ 
+                    <button
+                        class="text mb-4 border-2 border-transparent rounded-2xl px-2 py-2 bg-blue-400 text-black-1 hover:bg-blue-500 font-extrabold mt-6 "
+                        id="complaint">Submit</button><br><br>
+
+                </form>
+
+            </div>
+
+        </center>
+    </section>
+
+    <script>
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e) => {
+                let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        });
+
+    </script>
+</body>
+
+</html>

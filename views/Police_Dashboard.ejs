@@ -11,54 +11,87 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 
 <body class="font-pop ">
     <div class="sidebar close bg-blue-900">
         <div class="logo-details">
-            <a href="Dashboard.html">
+            <a href="/police">
                 <img src="../public/img/logo1.png" alt="Logo" class="w-14  my-6">
             </a>
             <span class="logo_name">Smart Policing</span>
         </div>
         <ul class="nav-links">
             <li>
-                <a href="filecomplaint.html">
-                    <i class='bx bx-comment-detail'></i>
-                    <span class="link_name">View Complaint</span>
+                <a href="/police">
+                    <i class='fa fa-eye'></i>
+                    <span class="link_name">View Complaints</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">View complaint</a></li>
+                    <li><a class="link_name" href="/police">View complaints</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="/police/police_fir">
                     <i class='bx bx-detail'></i>
                     <span class="link_name">FIR Report</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">FIR Report</a></li>
+                    <li><a class="link_name" href="/police/police_fir">FIR Report</a></li>
                 </ul>
             </li>
 
             <li>   
-                <a href="#">
-                    <i class='bx bx-book-add'></i>
-                    <span class="link_name">Create ChargeSheet</span>
+                <a href="/police/police_upload">
+                    <i class='fa fa-upload'></i>
+                    <span class="link_name">Upload Evidence</span>
                 </a>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Create ChargeSheet</a></li>
+                    <li><a class="link_name" href="/police/police_upload">Upload Evidence</a></li>
                 </ul>
             </li>
+            <li>   
+                <a href="/police/police_investigation">
+                    <i class='bx bx-book-add'></i>
+                    <span class="link_name">Investigation Report</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/police/police_investigation">Investigation Report</a></li>
+                </ul>
+            </li>
+            <li>   
+                <a href="/police/police_viewforensic">
+                    <i class='fa fa-eye'></i>
+                    <span class="link_name">Forensic Reports</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/police/police_viewforensic">Forensic Reports</a></li>
+                </ul>
+            </li>
+            <li>   
+                <a href="/police/police_viewcourt">
+                    <i class='fa fa-eye'></i>
+                    <span class="link_name">Court Reports</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/police/police_viewcourt">Court Reports</a></li>
+                </ul>
+            </li>
+            
             <li>
                 <div class="profile-details">
                     <div class="profile-content">
                     </div>
 
-                    <div class="profile_name ">Haider Ali</div>
-                    <a href="login.html"> . <i class='bx bx-log-out'></i></a>
+                    <div class="profile_name ">Police</div>
+                    <a href="/police/logout"> . <i class='bx bx-log-out'></i></a>
 
                 </div>
             </li>
@@ -66,9 +99,39 @@
     </div>
     <section class="home-section">
         <div class="home-content">
-            <i class='bx bx-menu'></i>
-            <span class="text">Dashboard</span>
+            <i class='bx bx-menu '></i>
+            <span class="text ">View Citizen Complaints</span>      
         </div>
+        <table class="text-center border-4 ml-14 w-11/12 bg-blue-900 text-white border-separate mt-20 border-spacing-2 border-b-4 border-t-4  border-slate-500 ...">
+            <thead>
+              <tr>
+                <th class="border border-slate-600 px-12  ...">Index</th>
+                <th class="border border-slate-600 px-12  ...">Name</th>
+                <th class="border border-slate-600 px-12  ...">Email</th>
+                <th class="border border-slate-600 px-12  ...">ID</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                
+
+                <% for (var i=1; i < obj.length; i++) { %>
+                    <% if(obj[i].Record.type == "Complaint") {var x=1; %>
+                        
+                <td ><%= x %></td>
+                <td ><%= obj[i].Record.name %></td>
+                <td ><%= obj[i].Record.emailid %></td>
+                <td class="hover:font-bold"><a href=<%= path.join('view_Complaint',obj[i].Key) %>><%= obj[i].Record.id %></a></td>
+                        
+                <%x++;}%>
+
+              </tr>
+              <%}%> 
+            </tbody>
+          </table>
+     
+    
     </section>
     <script>
         let arrow = document.querySelectorAll(".arrow");

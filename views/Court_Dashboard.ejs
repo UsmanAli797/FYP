@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<title> Smart Policing system </title>
+<link rel = "icon" href = '../public/img/logo1.png' 
+        type = "image/x-icon">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="font-pop ">
+    <div class="sidebar close bg-blue-900">
+        <div class="logo-details">
+            <a href="/court">
+                <img src="../public/img/logo1.png" alt="Logo" class="w-14  my-6">
+            </a>
+            <span class="logo_name">Smart Policing</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="/court">
+                    <i class='bx bx-comment-detail hover:font-bold'></i>
+                    <span class="link_name">Recieved FIR</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/court">Recieved Case</a></li>
+                </ul>
+            </li>
+          
+                    <li>
+                        <a href="/court/court_viewinvestigation">
+                            <i class='bx bx-message-rounded-error hover:font-bold'></i>
+                            <span class="link_name">Investigation Reports</span>
+                        </a>
+                        <ul class="sub-menu blank">
+                            <li><a class="link_name" href="/court/court_viewinvestigation">Investigation Reports</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/court/court_chargesheet">
+                            <i class='bx bx-message-rounded-add hover:font-bold '></i>
+                            <span class="link_name">Create Charge-Sheet</span>
+                        </a>
+                        <ul class="sub-menu blank">
+                            <li><a class="link_name" href="/court/court_chargesheet">Charge-Sheet</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/court/court_judgementreport">
+                            <i class='bx bx-message-alt-add hover:font-bold'></i>
+                            <span class="link_name">Create Judgement Report</span>
+                        </a>
+                        <ul class="sub-menu blank">
+                            <li><a class="link_name" href="/court/court_judgementreport">Create Judgement Report</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                <div class="profile-details">
+                    <div class="profile-content">
+                    </div>
+
+                    <div class="profile_name ">Court</div>
+                    <a href="/court/logout"> . <i class='bx bx-log-out'></i></a>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <div class="home-content">
+            <i class='bx bx-menu '></i>
+            <span class="text ">Court Dashboard</span>      
+        </div>
+        <table class="text-center border-4 ml-14 w-11/12 bg-blue-900 text-white border-separate mt-20 border-spacing-2 border-b-4 border-t-4 rounded-xl border-slate-500 ...">
+            <thead>
+              <tr>
+                <th class="border border-slate-600 px-12  ...">Index</th>
+                <th class="border border-slate-600 px-12  ...">Name</th>
+                <th class="border border-slate-600 px-12  ...">Offense</th>
+                <th class="border border-slate-600 px-12  ...">ID</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                
+
+                <% for (var i=1; i < obj.length; i++) { %>
+                    <% if(obj[i].Record.type == "FIR") {var x=1; %>
+
+                <td ><%= i %></td>
+                <td ><%= obj[i].Record.namee %></td>
+                <td ><%= obj[i].Record.offense %></td>
+                <td class="hover:font-bold"><a href=<%= path.join('fir_detail',obj[i].Key) %>><%= obj[i].Record.cnic %></a></td>
+                
+                <%x++;}%>
+
+            </tr>
+            <%}%> 
+            </tbody>
+          </table>
+     
+    
+    </section>
+
+
+    <script>
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e) => {
+                let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        });
+       
+    </script>
+</body>
+
+</html>

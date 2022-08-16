@@ -22,28 +22,21 @@
     <center>
         <img src="../public/img/logo1.png" alt="Logo" class="w-32 mb-2 mt-2">
 
-        <a href="/index.ejs" class="text-dark-1 mb-4 text-3xl font-extrabold "> Smart Policing System</a>
+        <a href="/" class="text-dark-1 mb-4 text-3xl font-extrabold "> Smart Policing System</a>
 
         <div class="w-80 h-72 border-2 border-black rounded-2xl mt-2 ">
-            <form action="/action_page.php " class="bg-light-1">
-                <h1 class="font-extrabold text-xl text-left mx-2 my-6 text-dark-1">Login as Forensic</h1>
-
-
-                    <i style="font-size:24px" class="fa">&#xf2c3;</i>
-                    <input class=" text-white capitalize border-b-2 bg-transparent outline outline-offset-2 outline-0"
-                        type="text" id="CNIC" name="CNIC" maxlength="13" placeholder="CNIC"><br><br>
-
+            <form action="/forensic/forensic_login" method="post" class="bg-light-1">
+                <h1 class="font-extrabold text-xl text-center mx-2 my-6 text-blue-1">Login as Forensics</h1>
+                <!-- <h1 class="font-extrabold text-xl text-center mx-2 my-6 text-dark-1">Enter Password</h1> -->
                 <i style="font-size:24px" class="fa hover:">&#xf13e;</i>
-                <input class=" text-white mb-4 border-b-2 bg-transparent outline outline-offset-2 outline-0"
-                    type="password" id="pwd" name="pwd" minlength="8" placeholder="Password"><br><br>
-
+                <input class=" text-black mb-4 border-b-2 bg-transparent outline outline-offset-2 outline-0"
+                    type="password" id="pwd" name="pass" minlength="8" placeholder="Password"><br>
                     <button type="submit"
                     class="text border-2 border-transparent rounded-2xl px-2 py-2 bg-blue-400 text-white hover:bg-blue-500 mt-6 ">Login Now</button>
-
             </form>
 
-            
-           
+
+
         </div>
     </center>
 </body>
